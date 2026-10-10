@@ -11,7 +11,7 @@ namespace Medvedev
             {
                 return a; // Если a больше, возвращаем a
             }
-            return b;     // Иначе возвращаем b
+            return b;     // Иначе возвращаем bllflf
         }
 
         // Метод возвращает НАИМЕНЬШЕЕ число
@@ -28,8 +28,6 @@ namespace Medvedev
 
 
 
-            bygubjk
-        {
             Console.Write("Введите первое число: ");
             int num1 = int.Parse(Console.ReadLine());
 
