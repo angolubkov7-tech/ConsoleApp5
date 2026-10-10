@@ -6,46 +6,34 @@ namespace Medvedev
     {
         static void Main(string[] args)
         {
+
+            try
+            {
+                Console.Write("Введите n номер из ряда фибоначи: ");
+                int fib = int.Parse(Console.ReadLine());
+
+                long result = Row(fib);
+                Console.WriteLine($"{fib} число в ряду фибоначи равно: {result}");
+            }
+
+            catch (FormatException)
+            {
+                Console.WriteLine("Введите число !");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Число слишком большое произошло переполниние!");
+            }
             
-            Console.Write("Введите число а: ");
-            int u = int.Parse(Console.ReadLine());
-
-            Console.Write("Введите число b: ");
-            int d = int.Parse(Console.ReadLine());
-
-            Console.Write("Ввидите число c: ");
-            int c = int.Parse(Console.ReadLine());
-
-            int result = 0;
-
-            Algoritm(u, d, ref result);
-
-            Algoritm(result, c, ref result);
-
-            Console.WriteLine($"Наибольший общий делитель чисел {u}, {d} и {c} равен: {result}");
         }
 
-        static void Algoritm(int a, int b, ref int temp)
+        static int Row(int n)
         {
-            if (a > b)
+            if (n == 1 || n == 2) return 1;
+
+            checked
             {
-                while (a != 0)
-                {
-                    int remainder = a % b;
-                    a = remainder;
-                    if (a != 0) b = a; 
-                }
-                temp = b; 
-            }
-            else
-            {
-                while (b != 0)
-                {
-                    int remainder = b % a;
-                    b = remainder;
-                    if (b != 0) a = b;
-                }
-                temp = a; 
+                return Row(n - 1) + Row(n - 2);
             }
         }
     }
