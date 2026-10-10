@@ -4,10 +4,25 @@ namespace Medvedev
 {
     class Program
     {
-        public static int Maximum(int a, int b)
+       static void Main(string[] args)
+       {
+            Console.Write("Ввидите число а: ");
+            int a =int.Parse(Console.ReadLine());
+            Console.Write("Ввидите число b: ");
+            int b = int.Parse(Console.ReadLine());
+
+
+            Rarrangement(ref a, ref b);
+
+            Console.WriteLine($"Значение а: {a}, Значение b: {b}");
+       }
+
+        static void Rarrangement(ref int aa, ref int bb)
         {
-            a = 0;
-            b = 1;
+            int temp = aa;
+
+            aa = bb;
+            bb = temp;
         }
     }
 }
