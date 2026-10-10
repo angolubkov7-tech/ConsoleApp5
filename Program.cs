@@ -6,44 +6,41 @@ namespace Medvedev
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите число для вычисления факториала: ");
-            ulong number = Convert.ToUInt64(Console.ReadLine());
-
-            if (Factorial(number, out ulong result))
-            {
-                Console.WriteLine($"Число: {number} факториал: {result}");
-            }
-            else
-            {
-                Console.WriteLine("Ошибка");
-            }
-        }  
-
-        static bool Factorial(ulong n, out ulong fac)
-        {
-            ulong temp = 1;
+            Console.Write("Введите число: ");
+            int nuber = int.Parse(Console.ReadLine());
 
             try
             {
-                checked
-                {
-                    for (ulong i = 2; i <= n; i++)
-                    {
-                        temp *= i;
-                    }
-
-                    fac = temp;
-
-                    return true;
-                }
+                long result = factorial(nuber);
+                Console.WriteLine($"Число:{nuber} его факториал: {result}");
             }
-
             catch (OverflowException)
             {
-                fac = 0;
-                return false;
+                Console.WriteLine("Данное число не поддерживается");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine($"Ошибка: {ex.Message}");
             }
 
+
+        }
+
+        static long factorial(int n)
+        {
+            if (n < 0)
+            {
+                throw new ArgumentException("Число должно быть неотрицательным.");
+            }
+
+            if (n == 0 || n == 1)
+            {
+                return 1;
+            }
+            checked
+            { 
+            return n * factorial(n - 1);
+            }
         }
     }
 }
