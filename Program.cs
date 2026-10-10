@@ -6,44 +6,43 @@ namespace Medvedev
     {
         static void Main(string[] args)
         {
-            Console.Write("Ввидите число а: ");
+            
+            Console.Write("Введите число а: ");
             int u = int.Parse(Console.ReadLine());
+
             Console.Write("Введите число b: ");
             int d = int.Parse(Console.ReadLine());
 
+            int result = 0;
 
-            Algoritm(u, d);
+            Algoritm(u, d, ref result);
 
-            Console.WriteLine($"Наибольший одщий делитель чисел: {u, d} равен: {}")
-
+            Console.WriteLine($"Наибольший общий делитель чисел {u} и {d} равен: {result}");
         }
 
-        static void Algoritm(int a, int b)
+        static void Algoritm(int a, int b, ref int temp)
         {
-            int temp = b;
-
             if (a > b)
             {
-                while (true)
+                while (a != 0)
                 {
-                    a %= b;
-                    if (a == 0)
-                    {
-                        temp = a; break;
-                    }
+                    int remainder = a % b;
+                    a = remainder;
+                    if (a != 0) b = a; 
                 }
+                temp = b; 
             }
-
             else
             {
-                while (true)
+                while (b != 0)
                 {
-                    b %= a;
-                    if (b == 0) { temp = b; break; }
+                    int remainder = b % a;
+                    b = remainder;
+                    if (b != 0) a = b;
                 }
-
-
+                temp = a; 
             }
         }
     }
 }
+
