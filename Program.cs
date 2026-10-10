@@ -6,40 +6,43 @@ namespace Medvedev
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите число: ");
-            int nuber = int.Parse(Console.ReadLine());
+            Console.Write("Ввидите число а: ");
+            int u = int.Parse(Console.ReadLine());
+            Console.Write("Введите число b: ");
+            int d = int.Parse(Console.ReadLine());
 
-            try
-            {
-                long result = factorial(nuber);
-                Console.WriteLine($"Число:{nuber} его факториал: {result}");
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("Данное число не поддерживается");
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine($"Ошибка: {ex.Message}");
-            }
 
+            Algoritm(u, d);
+
+            Console.WriteLine($"Наибольший одщий делитель чисел: {u, d} равен: {}")
 
         }
 
-        static long factorial(int n)
+        static void Algoritm(int a, int b)
         {
-            if (n < 0)
+            int temp = b;
+
+            if (a > b)
             {
-                throw new ArgumentException("Число должно быть неотрицательным.");
+                while (true)
+                {
+                    a %= b;
+                    if (a == 0)
+                    {
+                        temp = a; break;
+                    }
+                }
             }
 
-            if (n == 0 || n == 1)
+            else
             {
-                return 1;
-            }
-            checked
-            { 
-            return n * factorial(n - 1);
+                while (true)
+                {
+                    b %= a;
+                    if (b == 0) { temp = b; break; }
+                }
+
+
             }
         }
     }
