@@ -7,9 +7,9 @@ namespace Medvedev
         static void Main(string[] args)
         {
             Console.Write("Введите число для вычисления факториала: ");
-            int number = int.Parse(Console.ReadLine());
+            ulong number = Convert.ToUInt64(Console.ReadLine());
 
-            if (Factorial(number, out long result))
+            if (Factorial(number, out ulong result))
             {
                 Console.WriteLine($"Число: {number} факториал: {result}");
             }
@@ -19,15 +19,15 @@ namespace Medvedev
             }
         }  
 
-        static bool Factorial(int n, out long fac)
+        static bool Factorial(ulong n, out ulong fac)
         {
-            long temp = 1;
+            ulong temp = 1;
 
             try
             {
                 checked
                 {
-                    for (int i = 2; i <= n; i++)
+                    for (ulong i = 2; i <= n; i++)
                     {
                         temp *= i;
                     }
