@@ -4,9 +4,9 @@ namespace Medvedev
 {
     class Program
     {
-        public static Chislo1(int a)
+        public static int Maximum(int a, int b)
         {
-
+            
         }
     }
 }
