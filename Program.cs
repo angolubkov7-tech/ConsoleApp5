@@ -13,11 +13,16 @@ namespace Medvedev
             Console.Write("Введите число b: ");
             int d = int.Parse(Console.ReadLine());
 
+            Console.Write("Ввидите число c: ");
+            int c = int.Parse(Console.ReadLine());
+
             int result = 0;
 
             Algoritm(u, d, ref result);
 
-            Console.WriteLine($"Наибольший общий делитель чисел {u} и {d} равен: {result}");
+            Algoritm(result, c, ref result);
+
+            Console.WriteLine($"Наибольший общий делитель чисел {u}, {d} и {c} равен: {result}");
         }
 
         static void Algoritm(int a, int b, ref int temp)
