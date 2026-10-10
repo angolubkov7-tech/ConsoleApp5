@@ -6,7 +6,8 @@ namespace Medvedev
     {
         public static int Maximum(int a, int b)
         {
-            
+            a = 0;
+            b = 1;
         }
     }
 }
