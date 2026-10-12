@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http.Headers;
+using System.Threading;
 
 namespace Medvedev
 {
@@ -67,36 +68,57 @@ namespace Medvedev
         //    Console.WriteLine();
         //}
 
-        // Задача 2
+        //// Задача 2
+
+        //static void Main(string[] args)
+        //{
+        //    long product = 1;
+        //    double avger;
+
+
+        //    long sum = CalculateArrayData(ref product, out avger, 1 ,2, 3, 4, 5, 6, 10000, 2);
+
+        //    Console.WriteLine("Операции над числами 1, 2, 3, 4, 5. (Смотреть ниже)");
+        //    Console.WriteLine($"Сумма чисел равна: {sum}");
+        //    Console.WriteLine($"Произведение чисел равна: {product}");
+        //    Console.WriteLine($"Средние арифмитическое чисел равна: {avger}");
+        //}
+
+        //public static long CalculateArrayData(ref long prod, out double avg, params int[] numbers)
+        //{
+        //    long sum = 0;
+        //    prod = 1;
+
+        //    for (int i =0; i < numbers.Length; i++)
+        //    {
+        //        sum += numbers[i];
+        //        prod *= numbers[i];
+        //    }
+
+        //    avg = (double)sum / numbers.Length;
+
+        //    return sum;
+        //}
+
+        // Задача 4
 
         static void Main(string[] args)
         {
-            long product = 1;
-            double avger;
 
-
-            long sum = CalculateArrayData(ref product, out avger, 1 ,2, 3, 4, 5);
-
-            Console.WriteLine("Операции над числами 1, 2, 3, 4, 5. (Смотреть ниже)");
-            Console.WriteLine($"Сумма чисел равна: {sum}");
-            Console.WriteLine($"Произведение чисел равна: {product}");
-            Console.WriteLine($"Средние арифмитическое чисел равна: {avger}");
         }
-
-        public static long CalculateArrayData(ref long prod, out double avg, params int[] numbers)
+        
+        struct DED
         {
-            long sum = 0;
-            prod = 1;
-
-            for (int i =0; i < numbers.Length; i++)
+            public string name;
+            public string[] GrumblingPhrases;
+            public int bruise;
+            
+            public DED() 
             {
-                sum += numbers[i];
-                prod *= numbers[i];
+                name = "Генадий";
+                GrumblingPhrases = new string[3];
+
             }
-
-            avg = (double)sum / numbers.Length;
-
-            return sum;
         }
     }
 }
