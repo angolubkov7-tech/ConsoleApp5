@@ -2,7 +2,7 @@
 
 namespace Medvedev
 {
-    class Program
+    class Program //exercize2
     {
        static void Main(string[] args)
        {
