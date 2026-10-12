@@ -2,7 +2,7 @@
 
 namespace Medvedev
 {
-    class Program //exercize4
+    class Program //HomeWork_5_1a
     {
         static void Main(string[] args)
         {
