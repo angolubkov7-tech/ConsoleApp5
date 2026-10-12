@@ -6,28 +6,45 @@ namespace Medvedev
     {
         static void Main(string[] args)
         {
-            int[] num;
-            Massiv(out num);
+            try
+            {
+                int[] num;
+                Massiv(out num);
 
-            Console.WriteLine("Выводим на экран 20 чисел из массива:");
-            PrintArray(num); 
+                Console.WriteLine("Выводим на экран 20 чисел из массива:");
+                PrintArray(num);
 
-            
-            Console.WriteLine("\nВведите индекс первого элемента, который хотите поменять (от 0 до 19):");
-            int index1 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Введите индекс второго элемента, который хотите поменять (от 0 до 19):");
-            int index2 = int.Parse(Console.ReadLine());
+                Console.WriteLine("\nВведите индекс первого элемента, который хотите поменять (от 0 до 19):");
+                int index1 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"\nВыводим на экран выбранные числа: {num[index1]}, {num[index2]}");
+                Console.WriteLine("Введите индекс второго элемента, который хотите поменять (от 0 до 19):");
+                int index2 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Заменяем эти числа друг на друга...");
-            int temp = num[index1];
-            num[index1] = num[index2];
-            num[index2] = temp;
+                if ((index1 < 0 || index1 > 19) || (index2 < 0 || index2 > 19))
+                {
+                    throw new ArgumentException("Неправильный диапазон");
+                }
 
-            Console.WriteLine("\nВыводим на экран измененный массив:");
-            PrintArray(num); 
+                Console.WriteLine($"\nВыводим на экран выбранные числа: {num[index1]}, {num[index2]}");
+
+                Console.WriteLine("Заменяем эти числа друг на друга...");
+                int temp = num[index1];
+                num[index1] = num[index2];
+                num[index2] = temp;
+
+                Console.WriteLine("\nВыводим на экран измененный массив:");
+                PrintArray(num);
+            }
+
+            catch (ArgumentException)
+            {
+                Console.WriteLine("Ошибка");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Ввели не число");
+            }
         }
 
         public static void Massiv(out int[] numbers)
