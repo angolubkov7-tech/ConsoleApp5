@@ -2,27 +2,45 @@
 
 namespace Medvedev
 {
-    class Program //exercize2
+    class Program 
     {
        static void Main(string[] args)
        {
-            Console.Write("Ввидите число а: ");
-            int a =int.Parse(Console.ReadLine());
-            Console.Write("Ввидите число b: ");
-            int b = int.Parse(Console.ReadLine());
+            int[] num;
+            Massiv(out num);
 
+            Console.WriteLine("Ввыводим на экран 20 чисел из массива");
+            for (int i = 0; i < num.Length; i++)
+            {
+                Console.WriteLine(num[i]);
+            }
 
-            Rarrangement(ref a, ref b);
-                
-            Console.WriteLine($"Значение а: {a}, Значение b: {b}");
-       }
+            Console.WriteLine("Выводим на экран два любых числа");
+            Console.WriteLine($"{num[7]}, {num[10]}");
 
-        static void Rarrangement(ref int aa, ref int bb)
+            Console.WriteLine("Заменяем эти числа друг на друга");
+            int temp = num[7];
+            num[7] = num[10];
+            num[10] = temp;
+
+            Console.WriteLine("Ввыводим на экран 20 чисел из массива");
+            for (int i = 0; i < num.Length; i++)
+            {
+                Console.WriteLine(num[i]);
+            }
+        }
+
+        public static void Massiv( out int[] numbers)
         {
-            int temp = aa;
+            numbers = new int[20];
 
-            aa = bb;
-            bb = temp;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = i + 1;
+            }
+
+
         }
     }
+
 }
