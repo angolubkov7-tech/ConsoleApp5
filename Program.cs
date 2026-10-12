@@ -2,45 +2,50 @@
 
 namespace Medvedev
 {
-    class Program 
+    class Program
     {
-       static void Main(string[] args)
-       {
+        static void Main(string[] args)
+        {
             int[] num;
             Massiv(out num);
 
-            Console.WriteLine("Ввыводим на экран 20 чисел из массива");
-            for (int i = 0; i < num.Length; i++)
-            {
-                Console.WriteLine(num[i]);
-            }
+            Console.WriteLine("Выводим на экран 20 чисел из массива:");
+            PrintArray(num); 
 
-            Console.WriteLine("Выводим на экран два любых числа");
-            Console.WriteLine($"{num[7]}, {num[10]}");
+            
+            Console.WriteLine("\nВведите индекс первого элемента, который хотите поменять (от 0 до 19):");
+            int index1 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Заменяем эти числа друг на друга");
-            int temp = num[7];
-            num[7] = num[10];
-            num[10] = temp;
+            Console.WriteLine("Введите индекс второго элемента, который хотите поменять (от 0 до 19):");
+            int index2 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Ввыводим на экран 20 чисел из массива");
-            for (int i = 0; i < num.Length; i++)
-            {
-                Console.WriteLine(num[i]);
-            }
+            Console.WriteLine($"\nВыводим на экран выбранные числа: {num[index1]}, {num[index2]}");
+
+            Console.WriteLine("Заменяем эти числа друг на друга...");
+            int temp = num[index1];
+            num[index1] = num[index2];
+            num[index2] = temp;
+
+            Console.WriteLine("\nВыводим на экран измененный массив:");
+            PrintArray(num); 
         }
 
-        public static void Massiv( out int[] numbers)
+        public static void Massiv(out int[] numbers)
         {
             numbers = new int[20];
-
             for (int i = 0; i < numbers.Length; i++)
             {
                 numbers[i] = i + 1;
             }
+        }
 
-
+        public static void PrintArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " "); 
+            }
+            Console.WriteLine();
         }
     }
-
 }
