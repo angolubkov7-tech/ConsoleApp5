@@ -13,7 +13,7 @@ namespace Medvedev
 
 
             Rarrangement(ref a, ref b);
-
+                
             Console.WriteLine($"Значение а: {a}, Значение b: {b}");
        }
 
