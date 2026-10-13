@@ -150,10 +150,12 @@ namespace Medvedev
                         ConsoleColor originalcolor = Console.BackgroundColor; //СОХРАНЯЕТ ЦВЕТ КОНСОЛИ В originalcolor
 
                         Console.BackgroundColor = ConsoleColor.Red;
+                        Console.Clear();
 
                         Thread.Sleep(3000);
 
                         Console.BackgroundColor = originalcolor;
+                        Console.Clear();
                     }
 
                     else
