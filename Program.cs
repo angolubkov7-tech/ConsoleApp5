@@ -100,6 +100,80 @@ namespace Medvedev
         //    return sum;
         //}
 
+        //Задача 3
+
+        //Зубчатый массив нужен для обьявление массивов содеражищий в себе массивов любой длины
+        static readonly string[][] Numbers = new string[][] //Переменную(readonly) или полю можно присвоить только один раз либо сразу при обьявление либо внутри конструктора класса/структуры. Ее изменение не возможно
+        {
+            // 0
+            new string[] { "###", "# #", "# #", "# #", "###" },
+            // 1
+            new string[] { "  #", "  #", "  #", "  #", "  #" },
+            // 2
+            new string[] { "###", "  #", "###", "#  ", "###" },
+            // 3
+            new string[] { "###", "  #", "###", "  #", "###" },
+            // 4
+            new string[] { "# #", "# #", "###", "  #", "  #" },
+            // 5
+            new string[] { "###", "#  ", "###", "  #", "###" },
+            // 6
+            new string[] { "###", "#  ", "###", "# #", "###" },
+            // 7
+            new string[] { "###", "  #", "  #", "  #", "  #" },
+            // 8
+            new string[] { "###", "# #", "###", "# #", "###" },
+            // 9
+            new string[] { "###", "# #", "###", "  #", "###" }
+
+        };
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.WriteLine("Ввидите число от 0 до 9 включительно для выхода из программы введите 'exit/выход': " );
+                string leave = Console.ReadLine();
+
+                string input = leave.ToLower().Trim();
+
+                if ( input =="exit" || input == "выход")
+                {
+                    break;
+                }
+
+                try
+                {
+                    int num = int.Parse(leave);
+
+                    if (num < 0 || num > 9)
+                    {
+                        ConsoleColor originalcolor = Console.BackgroundColor; //СОХРАНЯЕТ ЦВЕТ КОНСОЛИ В originalcolor
+
+                        Console.BackgroundColor = ConsoleColor.Red;
+
+                        Thread.Sleep(3000);
+
+                        Console.BackgroundColor = originalcolor;
+                    }
+
+                    else
+                    {
+                        //Берем шаблон из зубчатого массива
+                        string[] pattern = Numbers[num];
+
+                        foreach (string pattern2 in pattern)
+                        {
+                            Console.WriteLine($"{pattern2}");
+                        }
+                    }
+                }
+                catch (FormatException) { Console.WriteLine("Ошибка формата"); }
+
+
+
+            }
+        }
+
         //// Задача 4
 
         //struct DED //Создаем структуру деда в которой 5 дедов
