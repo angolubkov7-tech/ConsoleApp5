@@ -100,78 +100,78 @@ namespace Medvedev
         //    return sum;
         //}
 
-        //Задача 3
+        ////Задача 3
 
-        //Зубчатый массив нужен для обьявление массивов содеражищий в себе массивов любой длины
-        static readonly string[][] Numbers = new string[][] //Переменную(readonly) или полю можно присвоить только один раз либо сразу при обьявление либо внутри конструктора класса/структуры. Ее изменение не возможно
-        {
-            // 0
-            new string[] { "###", "# #", "# #", "# #", "###" },
-            // 1
-            new string[] { "  #", "  #", "  #", "  #", "  #" },
-            // 2
-            new string[] { "###", "  #", "###", "#  ", "###" },
-            // 3
-            new string[] { "###", "  #", "###", "  #", "###" },
-            // 4
-            new string[] { "# #", "# #", "###", "  #", "  #" },
-            // 5
-            new string[] { "###", "#  ", "###", "  #", "###" },
-            // 6
-            new string[] { "###", "#  ", "###", "# #", "###" },
-            // 7
-            new string[] { "###", "  #", "  #", "  #", "  #" },
-            // 8
-            new string[] { "###", "# #", "###", "# #", "###" },
-            // 9
-            new string[] { "###", "# #", "###", "  #", "###" }
+        ////Зубчатый массив нужен для обьявление массивов содеражищий в себе массивов любой длины
+        //static readonly string[][] Numbers = new string[][] //Переменную(readonly) или полю можно присвоить только один раз либо сразу при обьявление либо внутри конструктора класса/структуры. Ее изменение не возможно
+        //{
+        //    // 0
+        //    new string[] { "###", "# #", "# #", "# #", "###" },
+        //    // 1
+        //    new string[] { "  #", "  #", "  #", "  #", "  #" },
+        //    // 2
+        //    new string[] { "###", "  #", "###", "#  ", "###" },
+        //    // 3
+        //    new string[] { "###", "  #", "###", "  #", "###" },
+        //    // 4
+        //    new string[] { "# #", "# #", "###", "  #", "  #" },
+        //    // 5
+        //    new string[] { "###", "#  ", "###", "  #", "###" },
+        //    // 6
+        //    new string[] { "###", "#  ", "###", "# #", "###" },
+        //    // 7
+        //    new string[] { "###", "  #", "  #", "  #", "  #" },
+        //    // 8
+        //    new string[] { "###", "# #", "###", "# #", "###" },
+        //    // 9
+        //    new string[] { "###", "# #", "###", "  #", "###" }
 
-        };
-        static void Main(string[] args)
-        {
-            while (true)
-            {
-                Console.WriteLine("Ввидите число от 0 до 9 включительно для выхода из программы введите 'exit/выход': " );
-                string leave = Console.ReadLine();
+        //};
+        //static void Main(string[] args)
+        //{
+        //    while (true)
+        //    {
+        //        Console.WriteLine("Ввидите число от 0 до 9 включительно для выхода из программы введите 'exit/выход': " );
+        //        string leave = Console.ReadLine();
 
-                string input = leave.ToLower().Trim();
+        //        string input = leave.ToLower().Trim();
 
-                if ( input =="exit" || input == "выход")
-                {
-                    break;
-                }
+        //        if ( input =="exit" || input == "выход")
+        //        {
+        //            break;
+        //        }
 
-                try
-                {
-                    int num = int.Parse(leave);
+        //        try
+        //        {
+        //            int num = int.Parse(leave);
 
-                    if (num < 0 || num > 9)
-                    {
-                        ConsoleColor originalcolor = Console.BackgroundColor; //СОХРАНЯЕТ ЦВЕТ КОНСОЛИ В originalcolor
+        //            if (num < 0 || num > 9)
+        //            {
+        //                ConsoleColor originalcolor = Console.BackgroundColor; //СОХРАНЯЕТ ЦВЕТ КОНСОЛИ В originalcolor
 
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.Clear();
+        //                Console.BackgroundColor = ConsoleColor.Red;
+        //                Console.Clear();
 
-                        Thread.Sleep(3000);
+        //                Thread.Sleep(3000);
 
-                        Console.BackgroundColor = originalcolor;
-                        Console.Clear();
-                    }
+        //                Console.BackgroundColor = originalcolor;
+        //                Console.Clear();
+        //            }
 
-                    else
-                    {
-                        //Берем шаблон из зубчатого массива
-                        string[] pattern = Numbers[num];
+        //            else
+        //            {
+        //                //Берем шаблон из зубчатого массива
+        //                string[] pattern = Numbers[num]; //Достает массив по его индексу прсле чего 'копирует' в массив pattern далее цикыл его перебирает
 
-                        foreach (string pattern2 in pattern)
-                        {
-                            Console.WriteLine($"{pattern2}");
-                        }
-                    }
-                }
-                catch (FormatException) { Console.WriteLine("Ошибка формата"); }
-            }
-        }
+        //                foreach (string pattern2 in pattern) //Цикл foreach берет названный массив пользователем из этого массива достает строки и печатает одну строку далее берет вторую и печатает ее
+        //                {
+        //                    Console.WriteLine($"{pattern2}");
+        //                }
+        //            }
+        //        }
+        //        catch (FormatException) { Console.WriteLine("Ошибка формата"); }
+        //    }
+        //}
 
         //// Задача 4
 
