@@ -168,9 +168,6 @@ namespace Medvedev
                     }
                 }
                 catch (FormatException) { Console.WriteLine("Ошибка формата"); }
-
-
-
             }
         }
 
