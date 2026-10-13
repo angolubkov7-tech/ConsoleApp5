@@ -177,7 +177,7 @@ namespace Medvedev
             //Список запрещенки или словарь бабки
             string[] forbiddenWords = { "сука", "суки", "бляха", "бляди", "говнюки" };
 
-            Console.WriteLine("бабка начинает проверку");
+            Console.WriteLine("Бабка начинает проверку!!!!!");
 
             //По очереди проверяем каждого деда
             for (int i = 0; i < mainContainer.fiveDEds.Length; i++) 
