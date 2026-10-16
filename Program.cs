@@ -272,7 +272,7 @@ namespace Medvedev
                 Console.WriteLine($" Фраз в лексиконе: {mainContainer.fiveDEds[i].GrumblingPhrases.Length}");
                 Console.WriteLine($" Получено фингалов сейчас: {freshBruises}");
                 Console.WriteLine($" Всего синяков у деда: {mainContainer.fiveDEds[i].bruise}");
-                Console.WriteLine(new string('-', 50));
+                Console.WriteLine();
             }
         }
     }
