@@ -270,10 +270,10 @@ namespace Medvedev
                 // 4. Выводим результаты на экран
                 Console.WriteLine($" Дед: {mainContainer.fiveDEds[i].name}");
                 Console.WriteLine($" Фраз в лексиконе: {mainContainer.fiveDEds[i].GrumblingPhrases.Length}");
-                Console.WriteLine($" Получено фингалов сейчас: {freshBruises}");
-                Console.WriteLine($" Всего синяков у деда: {mainContainer.fiveDEds[i].bruise}");
+                Console.WriteLine($" Получено фингалов: {freshBruises}");
+                Console.WriteLine($" Всего синяков у деда: {mainContainer.fiveDEds[i].bruise + i}");
                 Console.WriteLine();
             }
-        }
+        } 
     }
 }
